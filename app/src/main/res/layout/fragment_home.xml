@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <import type="android.view.View" />
+        <variable
+            name="homeViewModel"
+            type="com.example.personalledger.ui.fragments.home.HomeViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/text_home"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_16"
+            android:layout_marginEnd="@dimen/dp_16"
+            android:layout_marginTop="@dimen/dp_16"
+            android:layout_marginBottom="@dimen/dp_24"
+            android:textAlignment="center"
+            android:textSize="20sp"
+            android:textColor="@color/colorBlack"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/et_description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_24"
+            android:layout_marginStart="@dimen/dp_16"
+            android:layout_marginEnd="@dimen/dp_16"
+            android:layout_marginBottom="@dimen/dp_16"
+            android:padding="@dimen/dp_16"
+            android:hint="@string/description"
+            android:inputType="text"
+            android:background="@drawable/curve_outline"
+            android:drawableStart="@drawable/ic_description_color"
+            android:drawablePadding="@dimen/dp_8"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/text_home"
+            android:importantForAutofill="no" />
+
+        <EditText
+            android:id="@+id/et_amount"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dp_16"
+            android:padding="@dimen/dp_16"
+            android:hint="@string/amount"
+            android:inputType="number"
+            android:background="@drawable/curve_outline"
+            android:drawableStart="@drawable/ic_amount_color"
+            android:drawablePadding="@dimen/dp_8"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/et_description"
+            android:importantForAutofill="no" />
+
+        <EditText
+            android:id="@+id/et_date_time"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dp_16"
+            android:padding="@dimen/dp_16"
+            android:hint="@string/date_and_time"
+            android:inputType="datetime"
+            android:background="@drawable/curve_outline"
+            android:drawableStart="@drawable/ic_calendar_color"
+            android:drawablePadding="@dimen/dp_8"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/et_amount"
+            android:importantForAutofill="no" />
+
+        <Button
+            android:id="@+id/btn_submit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minWidth="@dimen/dp_100"
+            android:minHeight="@dimen/dp_48"
+            android:layout_margin="@dimen/dp_16"
+            android:text="@string/submit"
+            android:textColor="@color/colorWhite"
+            android:background="@drawable/button_background"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/et_date_time" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
