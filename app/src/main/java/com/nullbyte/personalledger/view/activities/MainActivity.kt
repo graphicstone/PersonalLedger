@@ -1,4 +1,4 @@
-package com.example.personalledger.ui.activities
+package com.nullbyte.personalledger.view.activities
 
 import android.os.Bundle
 import androidx.navigation.findNavController
@@ -13,7 +13,7 @@ import androidx.appcompat.widget.Toolbar
 import android.view.Menu
 import android.widget.ImageButton
 import androidx.core.view.GravityCompat
-import com.example.personalledger.R
+import com.nullbyte.personalledger.R
 
 class MainActivity : AppCompatActivity() {
 

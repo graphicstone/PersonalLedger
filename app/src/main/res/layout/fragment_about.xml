@@ -7,7 +7,7 @@
         <import type="android.view.View" />
         <variable
             name="aboutViewModel"
-            type="com.example.personalledger.ui.fragments.about.AboutViewModel" />
+            type="com.nullbyte.personalledger.viewModel.AboutViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

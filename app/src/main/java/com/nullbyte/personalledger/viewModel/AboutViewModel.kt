@@ -1,4 +1,4 @@
-package com.example.personalledger.ui.fragments.about
+package com.nullbyte.personalledger.viewModel
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

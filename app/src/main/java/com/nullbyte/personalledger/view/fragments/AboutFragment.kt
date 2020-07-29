@@ -1,4 +1,4 @@
-package com.example.personalledger.ui.fragments.about
+package com.nullbyte.personalledger.view.fragments
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,8 +8,9 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
-import com.example.personalledger.R
-import com.example.personalledger.databinding.FragmentAboutBinding
+import com.nullbyte.personalledger.R
+import com.nullbyte.personalledger.databinding.FragmentAboutBinding
+import com.nullbyte.personalledger.viewModel.AboutViewModel
 
 class AboutFragment : Fragment() {
 
@@ -25,7 +26,7 @@ class AboutFragment : Fragment() {
         mAboutViewModel = ViewModelProviders.of(this).get(AboutViewModel::class.java)
         mAboutBinding.aboutViewModel = mAboutViewModel
 
-        mAboutViewModel.text.observe(this, Observer {
+        mAboutViewModel.text.observe(viewLifecycleOwner, Observer {
             mAboutBinding.textSlideshow.text = it
         })
 

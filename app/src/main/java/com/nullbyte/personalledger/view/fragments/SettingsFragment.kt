@@ -1,18 +1,16 @@
-package com.example.personalledger.ui.fragments.settings
+package com.nullbyte.personalledger.view.fragments
 
-import android.app.ActionBar
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
-import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
-import com.example.personalledger.R
-import com.example.personalledger.databinding.FragmentSettingsBinding
+import com.nullbyte.personalledger.R
+import com.nullbyte.personalledger.databinding.FragmentSettingsBinding
+import com.nullbyte.personalledger.viewModel.SettingsViewModel
 
 class SettingsFragment : Fragment() {
 
@@ -24,11 +22,12 @@ class SettingsFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        mSettingsBinding = DataBindingUtil.inflate(inflater, R.layout.fragment_settings, container, false)
+        mSettingsBinding =
+            DataBindingUtil.inflate(inflater, R.layout.fragment_settings, container, false)
         mSettingsViewModel = ViewModelProviders.of(this).get(SettingsViewModel::class.java)
         mSettingsBinding.settingsViewModel = mSettingsViewModel
 
-        mSettingsViewModel.text.observe(this, Observer {
+        mSettingsViewModel.text.observe(viewLifecycleOwner, Observer {
             mSettingsBinding.textTools.text = it
         })
         return mSettingsBinding.root

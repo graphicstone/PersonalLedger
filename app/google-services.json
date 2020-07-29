@@ -1,42 +1,34 @@
 {
   "project_info": {
-    "project_number": "314737785763",
-    "firebase_url": "https://personalledger-a28a0.firebaseio.com",
-    "project_id": "personalledger-a28a0",
-    "storage_bucket": "personalledger-a28a0.appspot.com"
+    "project_number": "235151491841",
+    "firebase_url": "https://personalledger-e4708.firebaseio.com",
+    "project_id": "personalledger-e4708",
+    "storage_bucket": "personalledger-e4708.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:314737785763:android:372044b6f92444e0e2b816",
+        "mobilesdk_app_id": "1:235151491841:android:63fc165c9639a7b93a5100",
         "android_client_info": {
-          "package_name": "com.example.personalledger"
+          "package_name": "com.nullbyte.personalledger"
         }
       },
       "oauth_client": [
         {
-          "client_id": "314737785763-9k3bddt8e393ncdekfpvvrfsjmvpp4tr.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.example.personalledger",
-            "certificate_hash": "d09ddd5329fc1f3c1c972645ec553c8b778a1303"
-          }
-        },
-        {
-          "client_id": "314737785763-42ravpjvk6op2d3jrktdbdae6h9i8s44.apps.googleusercontent.com",
+          "client_id": "235151491841-v9jmso59478fv5ssr1v6n2ndp91uc7sf.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyBdvh7QsknCzR0AlEPMvvEJtZwqJgUJERs"
+          "current_key": "AIzaSyBElaSQV1MgtorFQ2MxvE2fbBAIjljKTQs"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "314737785763-42ravpjvk6op2d3jrktdbdae6h9i8s44.apps.googleusercontent.com",
+              "client_id": "235151491841-v9jmso59478fv5ssr1v6n2ndp91uc7sf.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

@@ -7,7 +7,7 @@
         <import type="android.view.View" />
         <variable
             name="settingsViewModel"
-            type="com.example.personalledger.ui.fragments.settings.SettingsViewModel" />
+            type="com.nullbyte.personalledger.viewModel.SettingsViewModel" />
 
     </data>
 

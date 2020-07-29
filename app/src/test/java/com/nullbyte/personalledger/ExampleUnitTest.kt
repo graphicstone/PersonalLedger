@@ -1,4 +1,4 @@
-package com.example.personalledger
+package com.nullbyte.personalledger
 
 import org.junit.Test
 
