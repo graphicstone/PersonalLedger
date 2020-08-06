@@ -1,18 +1,22 @@
 package com.nullbyte.personalledger.view.activities
 
+import android.content.Intent
 import android.os.Bundle
+import android.view.Menu
+import android.widget.ImageButton
+import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.Toolbar
+import androidx.core.view.GravityCompat
+import androidx.drawerlayout.widget.DrawerLayout
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
-import androidx.drawerlayout.widget.DrawerLayout
 import com.google.android.material.navigation.NavigationView
-import androidx.appcompat.app.AppCompatActivity
-import androidx.appcompat.widget.Toolbar
-import android.view.Menu
-import android.widget.ImageButton
-import androidx.core.view.GravityCompat
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
 import com.nullbyte.personalledger.R
 
 class MainActivity : AppCompatActivity() {
@@ -29,6 +33,20 @@ class MainActivity : AppCompatActivity() {
         val drawerLayout: DrawerLayout = findViewById(R.id.drawer_layout)
         val navView: NavigationView = findViewById(R.id.nav_view)
         val navController = findNavController(R.id.nav_host_fragment)
+
+        val name = navView.getHeaderView(0).findViewById<TextView>(R.id.tv_first_name)
+        val emailId = navView.getHeaderView(0).findViewById<TextView>(R.id.tv_email)
+
+        name.text = Firebase.auth.currentUser?.displayName
+        emailId.text = Firebase.auth.currentUser?.email
+
+        navView.getHeaderView(0).setOnClickListener {
+            val intent = Intent(this, ProfileActivity::class.java)
+            startActivity(intent)
+        }
+
+//        val abc = SharedPrefUtility.getStringFromPreferences()
+
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         appBarConfiguration = AppBarConfiguration(
@@ -42,7 +60,7 @@ class MainActivity : AppCompatActivity() {
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
 
-        val menuBtn : ImageButton = findViewById(R.id.imgBtn_menu)
+        val menuBtn: ImageButton = findViewById(R.id.imgBtn_menu)
         menuBtn.setOnClickListener { view ->
             drawerLayout.openDrawer(GravityCompat.START)
         }

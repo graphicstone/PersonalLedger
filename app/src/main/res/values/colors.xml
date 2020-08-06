@@ -13,4 +13,5 @@
     <color name="colorYellow">#FBBC05</color>
     <color name="colorLight_blue">#f2f7fd</color>
     <color name="colorGrey">#f5f5ef</color>
+    <color name="colorPrimaryText">#212121</color>
 </resources>

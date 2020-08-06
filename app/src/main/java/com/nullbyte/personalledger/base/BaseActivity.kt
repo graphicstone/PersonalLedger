@@ -36,6 +36,8 @@ abstract class BaseActivity : AppCompatActivity() {
         onActivityDestroy()
     }
 
+
+
     abstract fun onActivityCreate(savedInstanceState: Bundle?)
     abstract fun onActivityStart()
     abstract fun onActivityResume()
