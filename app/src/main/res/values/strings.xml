@@ -31,4 +31,7 @@
     <string name="email">E-Mail</string>
     <string name="sign_up">Sign Up</string>
     <string name="sign_out">Sign Out</string>
+    <string name="peer_id">Peer ID (if any)</string>
+    <string name="type">Type (DEBIT/CREDIT)</string>
+    <string name="label">Label</string>
 </resources>

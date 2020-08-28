@@ -16,6 +16,10 @@ class LoginViewModel(application: Application) : BaseViewModel(application), Res
         repository.signInUser(email, password, this)
     }
 
+    fun signInWithGoogle(idToken: String) {
+        repository.signInWithGoogle(idToken, this)
+    }
+
     override fun onSuccess(`object`: Any?) {
         signInResponse.postValue(`object` as FirebaseUser)
     }

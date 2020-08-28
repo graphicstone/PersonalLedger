@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
+
         <import type="android.view.View" />
+
         <variable
             name="homeViewModel"
             type="com.nullbyte.personalledger.viewModel.HomeViewModel" />
@@ -20,12 +21,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/dp_16"
-            android:layout_marginEnd="@dimen/dp_16"
             android:layout_marginTop="@dimen/dp_16"
+            android:layout_marginEnd="@dimen/dp_16"
             android:layout_marginBottom="@dimen/dp_24"
             android:textAlignment="center"
-            android:textSize="20sp"
             android:textColor="@color/colorBlack"
+            android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -34,65 +35,116 @@
             android:id="@+id/et_description"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/dp_24"
             android:layout_marginStart="@dimen/dp_16"
+            android:layout_marginTop="@dimen/dp_24"
             android:layout_marginEnd="@dimen/dp_16"
             android:layout_marginBottom="@dimen/dp_16"
-            android:padding="@dimen/dp_16"
-            android:hint="@string/description"
-            android:inputType="text"
             android:background="@drawable/curve_outline"
             android:drawableStart="@drawable/ic_description_color"
             android:drawablePadding="@dimen/dp_8"
-            app:layout_constraintStart_toStartOf="parent"
+            android:hint="@string/description"
+            android:importantForAutofill="no"
+            android:inputType="text"
+            android:padding="@dimen/dp_16"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/text_home"
-            android:importantForAutofill="no" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/text_home" />
 
         <EditText
             android:id="@+id/et_amount"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/dp_16"
-            android:padding="@dimen/dp_16"
-            android:hint="@string/amount"
-            android:inputType="number"
             android:background="@drawable/curve_outline"
             android:drawableStart="@drawable/ic_amount_color"
             android:drawablePadding="@dimen/dp_8"
-            app:layout_constraintStart_toStartOf="parent"
+            android:hint="@string/amount"
+            android:importantForAutofill="no"
+            android:inputType="number"
+            android:padding="@dimen/dp_16"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/et_description"
-            android:importantForAutofill="no" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/et_description" />
 
         <EditText
             android:id="@+id/et_date_time"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/dp_16"
-            android:padding="@dimen/dp_16"
+            android:background="@drawable/curve_outline"
+            android:cursorVisible="false"
+            android:drawableStart="@drawable/ic_calendar_color"
+            android:drawablePadding="@dimen/dp_8"
+            android:focusable="false"
+            android:focusableInTouchMode="true"
             android:hint="@string/date_and_time"
+            android:importantForAutofill="no"
             android:inputType="datetime"
+            android:padding="@dimen/dp_16"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/et_amount" />
+
+        <EditText
+            android:id="@+id/et_label"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dp_16"
             android:background="@drawable/curve_outline"
             android:drawableStart="@drawable/ic_calendar_color"
             android:drawablePadding="@dimen/dp_8"
-            app:layout_constraintStart_toStartOf="parent"
+            android:hint="@string/label"
+            android:importantForAutofill="no"
+            android:inputType="text"
+            android:padding="@dimen/dp_16"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/et_amount"
-            android:importantForAutofill="no" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/et_date_time" />
+
+        <EditText
+            android:id="@+id/et_peer_id"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dp_16"
+            android:background="@drawable/curve_outline"
+            android:drawableStart="@drawable/ic_calendar_color"
+            android:drawablePadding="@dimen/dp_8"
+            android:hint="@string/peer_id"
+            android:importantForAutofill="no"
+            android:inputType="text"
+            android:padding="@dimen/dp_16"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/et_label" />
+
+        <EditText
+            android:id="@+id/et_type"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dp_16"
+            android:background="@drawable/curve_outline"
+            android:drawableStart="@drawable/ic_calendar_color"
+            android:drawablePadding="@dimen/dp_8"
+            android:hint="@string/type"
+            android:importantForAutofill="no"
+            android:inputType="text"
+            android:padding="@dimen/dp_16"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/et_peer_id" />
 
         <Button
             android:id="@+id/btn_submit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dp_16"
+            android:background="@drawable/button_background"
             android:minWidth="@dimen/dp_100"
             android:minHeight="@dimen/dp_48"
-            android:layout_margin="@dimen/dp_16"
             android:text="@string/submit"
             android:textColor="@color/colorWhite"
-            android:background="@drawable/button_background"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/et_date_time" />
+            app:layout_constraintTop_toBottomOf="@id/et_type" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
