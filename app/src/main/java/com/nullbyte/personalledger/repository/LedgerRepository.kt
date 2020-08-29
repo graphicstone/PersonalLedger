@@ -24,6 +24,33 @@ class LedgerRepository {
             }
     }
 
+    fun getTransaction(listener: ResultListener) {
+
+        val transactionList: ArrayList<ExpanseModel> = ArrayList()
+
+        db.collection(Constant.USERS)
+            .document(Firebase.auth.currentUser?.email!!)
+            .collection(Constant.TRANSACTION)
+            .addSnapshotListener { value, error ->
+                if (!value?.isEmpty!!) {
+                    for (document in value) {
+                        val transaction = ExpanseModel(
+                            document.data["description"] as String,
+                            document.data["amount"] as Long,
+                            document.data["date"] as String,
+                            document.data["label"] as String,
+                            document.data["peerId"] as String,
+                            document.data["type"] as String
+                        )
+                        transactionList.add(transaction)
+                    }
+                    listener.onSuccess(transactionList)
+                } else {
+                    listener.onFailure(error?.message)
+                }
+            }
+    }
+
     fun deleteTransaction(id: String, listener: ResultListener) {
         db.collection(Constant.USERS)
             .document(Firebase.auth.currentUser?.email!!)

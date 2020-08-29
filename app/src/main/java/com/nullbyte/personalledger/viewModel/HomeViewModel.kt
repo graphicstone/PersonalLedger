@@ -10,6 +10,7 @@ import com.nullbyte.personalledger.model.ExpanseModel
 import com.nullbyte.personalledger.repository.LedgerRepository
 
 class HomeViewModel(application: Application) : BaseViewModel(application), ResultListener {
+
     private val ledgerRepository: LedgerRepository = LedgerRepository()
     var result = MutableLiveData<Boolean>()
 

@@ -6,7 +6,7 @@
     <data>
         <import type="android.view.View" />
         <variable
-            name="galleryViewModel"
+            name="expanseHistoryViewModel"
             type="com.nullbyte.personalledger.viewModel.ExpenseHistoryViewModel" />
 
     </data>

@@ -34,4 +34,6 @@
     <string name="peer_id">Peer ID (if any)</string>
     <string name="type">Type (DEBIT/CREDIT)</string>
     <string name="label">Label</string>
+    <string name="debit">DEBIT</string>
+    <string name="google_sign_in">Google Sign In</string>
 </resources>

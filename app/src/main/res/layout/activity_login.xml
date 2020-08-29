@@ -27,7 +27,7 @@
                 android:layout_width="@dimen/dp_150"
                 android:layout_height="@dimen/dp_150"
                 android:layout_gravity="center"
-                android:layout_marginTop="@dimen/dp_60"
+                android:layout_marginTop="@dimen/dp_32"
                 android:contentDescription="@string/login_logo"
                 android:src="@drawable/ic_launcher_background" />
 
@@ -86,7 +86,9 @@
                 android:id="@+id/btn_login"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="@dimen/dp_24"
+                android:layout_marginStart="@dimen/dp_24"
+                android:layout_marginTop="@dimen/dp_16"
+                android:layout_marginEnd="@dimen/dp_24"
                 android:padding="@dimen/dp_16"
                 android:text="@string/login"
                 app:cornerRadius="@dimen/dp_32" />
@@ -95,10 +97,21 @@
                 android:id="@+id/btn_sign_up"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="@dimen/dp_24"
+                android:layout_marginStart="@dimen/dp_24"
+                android:layout_marginTop="@dimen/dp_8"
+                android:layout_marginEnd="@dimen/dp_24"
                 android:padding="@dimen/dp_16"
                 android:text="@string/sign_up"
                 app:cornerRadius="@dimen/dp_32" />
+
+            <ImageButton
+                android:id="@+id/ib_google_sign_in"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/dp_16"
+                android:src="@mipmap/ic_launcher_round"
+                android:contentDescription="@string/google_sign_in" />
 
         </LinearLayout>
 

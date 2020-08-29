@@ -27,7 +27,6 @@ class HomeFragment : BaseFragment(), DatePickerDialog.OnDateSetListener,
 
     private lateinit var mHomeViewModel: HomeViewModel
     private lateinit var mHomeBinding: FragmentHomeBinding
-    private lateinit var db: DatabaseReference
     var day = 0
     var month: Int = 0
     var year: Int = 0
@@ -50,10 +49,23 @@ class HomeFragment : BaseFragment(), DatePickerDialog.OnDateSetListener,
         mHomeViewModel = ViewModelProvider(this).get(HomeViewModel::class.java)
         mHomeBinding.homeViewModel = mHomeViewModel
 
-        db = FirebaseDatabase.getInstance().reference
-
         observeData()
         clickListeners()
+    }
+
+    private fun clickListeners() {
+
+        mHomeBinding.btnSubmit.setOnClickListener {
+            val data = ExpanseModel(
+                mHomeBinding.etDescription.text.toString(),
+                mHomeBinding.etAmount.text.toString().toLong(),
+                mHomeBinding.etDateTime.text.toString(),
+                mHomeBinding.etLabel.text.toString(),
+                mHomeBinding.etPeerId.text.toString(),
+                mHomeBinding.etType.text.toString()
+            )
+            mHomeViewModel.putTransaction(data)
+        }
 
         mHomeBinding.etDateTime.setOnClickListener {
             val calendar: Calendar = Calendar.getInstance()
@@ -63,21 +75,6 @@ class HomeFragment : BaseFragment(), DatePickerDialog.OnDateSetListener,
             val datePickerDialog =
                 DatePickerDialog(requireContext(), this@HomeFragment, year, month, day)
             datePickerDialog.show()
-        }
-    }
-
-    private fun clickListeners() {
-
-        mHomeBinding.btnSubmit.setOnClickListener {
-            val data: ExpanseModel = ExpanseModel(
-                mHomeBinding.etDescription.text.toString(),
-                mHomeBinding.etAmount.text.toString().toInt(),
-                mHomeBinding.etDateTime.text.toString(),
-                mHomeBinding.etLabel.text.toString(),
-                mHomeBinding.etPeerId.text.toString(),
-                mHomeBinding.etType.text.toString()
-            )
-            mHomeViewModel.putTransaction(data)
         }
     }
 

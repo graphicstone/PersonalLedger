@@ -1,13 +1,30 @@
 package com.nullbyte.personalledger.viewModel
 
+import android.app.Application
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.nullbyte.medicineledger.listener.ResultListener
+import com.nullbyte.personalledger.base.BaseViewModel
+import com.nullbyte.personalledger.model.ExpanseModel
+import com.nullbyte.personalledger.repository.LedgerRepository
 
-class ExpenseHistoryViewModel : ViewModel() {
+class ExpenseHistoryViewModel(application: Application) : BaseViewModel(application), ResultListener {
 
-    private val _text = MutableLiveData<String>().apply {
-        value = "Expense History"
+    private val ledgerRepository: LedgerRepository = LedgerRepository()
+    var result = MutableLiveData<ArrayList<ExpanseModel>>()
+
+    fun getTransaction() {
+        ledgerRepository.getTransaction(this)
     }
-    val text: LiveData<String> = _text
+
+    override fun onSuccess(`object`: Any?) {
+        result.value = `object` as ArrayList<ExpanseModel>
+    }
+
+    override fun onFailure(`object`: Any?) {
+        result.value = `object` as ArrayList<ExpanseModel>
+    }
+
+
 }

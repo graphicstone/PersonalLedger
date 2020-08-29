@@ -34,7 +34,6 @@ class LoginActivity : BaseActivity() {
         init()
         observeData()
         clickListener()
-        googleSignIn()
     }
 
     private fun observeData() {
@@ -56,14 +55,16 @@ class LoginActivity : BaseActivity() {
 
     private fun clickListener() {
         binding.btnLogin.setOnClickListener {
-//            val email = binding.etUsername.text.toString()
-//            val password = binding.etPassword.text.toString()
-//            viewModel.signIn(email, password)
-            googleSignIn()
+            val email = binding.etUsername.text.toString()
+            val password = binding.etPassword.text.toString()
+            viewModel.signIn(email, password)
         }
         binding.btnSignUp.setOnClickListener {
             val intent = Intent(this, SignUpActivity::class.java)
             startActivity(intent)
+        }
+        binding.ibGoogleSignIn.setOnClickListener {
+            googleSignIn()
         }
     }
 
@@ -98,7 +99,9 @@ class LoginActivity : BaseActivity() {
                 Log.i("GOOGLE", "firebaseAuthWithGoogle:" + account.id)
                 viewModel.signInWithGoogle(account.idToken!!)
             } catch (e: ApiException) {
+                e.message?.let { VariableAndMethodUtility.showToast(this, it) }
                 Log.i("GOOGLE", "Google sign in failed", e)
+
             }
         }
     }
