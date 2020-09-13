@@ -36,4 +36,6 @@
     <string name="label">Label</string>
     <string name="debit">DEBIT</string>
     <string name="google_sign_in">Google Sign In</string>
+    <string name="personal_details">Personal Details</string>
+    <string name="next">Next</string>
 </resources>
