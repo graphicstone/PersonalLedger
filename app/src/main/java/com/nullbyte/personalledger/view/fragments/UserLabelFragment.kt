@@ -29,6 +29,8 @@ class UserLabelFragment : BaseFragment() {
     override fun initializeViews(view: View, savedInstanceState: Bundle?) {
         viewModel = ViewModelProvider(this).get(UserLabelViewModel::class.java)
         binding.viewModel = viewModel
+
+
     }
 
     override fun onFragmentStart() {

@@ -4,6 +4,7 @@ import android.os.Bundle
 import com.nullbyte.personalledger.R
 import com.nullbyte.personalledger.base.BaseActivity
 import com.nullbyte.personalledger.utilities.addFragment
+import com.nullbyte.personalledger.utilities.addFragmentWithoutBackStack
 import com.nullbyte.personalledger.view.fragments.UserDetailsFragment
 
 class OnBoardingActivity : BaseActivity() {
@@ -12,7 +13,7 @@ class OnBoardingActivity : BaseActivity() {
     override fun onActivityCreate(savedInstanceState: Bundle?) {
         setContentView(R.layout.activity_on_boarding)
 
-        addFragment(UserDetailsFragment(), R.id.fl_on_boarding)
+        addFragmentWithoutBackStack(UserDetailsFragment(), R.id.fl_on_boarding)
     }
 
     override fun onActivityStart() {

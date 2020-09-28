@@ -56,8 +56,9 @@ class SignUpActivity : BaseActivity() {
     private fun updateUI(user: FirebaseUser?) {
         if (user != null) {
             SharedPrefUtility.setString("id", user.email)
-            val intent = Intent(this, MainActivity::class.java)
+            val intent = Intent(this, OnBoardingActivity::class.java)
             startActivity(intent)
+            finish()
         }
     }
 
