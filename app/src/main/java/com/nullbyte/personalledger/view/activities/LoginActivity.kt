@@ -4,16 +4,12 @@ import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import androidx.databinding.DataBindingUtil
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.gms.common.api.ApiException
-import com.google.android.material.snackbar.Snackbar
-import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
-import com.google.firebase.auth.GoogleAuthProvider
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 import com.nullbyte.personalledger.R
@@ -37,10 +33,10 @@ class LoginActivity : BaseActivity() {
     }
 
     private fun observeData() {
-        viewModel.signInResponse.observe(this, Observer { result ->
+        viewModel.signInResponse.observe(this, { result ->
             updateUI(result)
         })
-        viewModel.signInError.observe(this, Observer {
+        viewModel.signInError.observe(this, {
             if (it != null) {
                 VariableAndMethodUtility.showToast(this, it)
             }
@@ -83,7 +79,7 @@ class LoginActivity : BaseActivity() {
 
     private fun updateUI(user: FirebaseUser?) {
         if (user != null) {
-            val intent = Intent(this, MainActivity::class.java)
+            val intent = Intent(this, LandingActivity::class.java)
             startActivity(intent)
         }
     }

@@ -6,28 +6,27 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProviders
+import androidx.lifecycle.ViewModelProvider
 import com.nullbyte.personalledger.R
-import com.nullbyte.personalledger.databinding.FragmentSettingsBinding
+import com.nullbyte.personalledger.databinding.FragmentProfileBinding
 import com.nullbyte.personalledger.viewModel.SettingsViewModel
 
-class SettingsFragment : Fragment() {
+class ProfileFragment : Fragment() {
 
     private lateinit var mSettingsViewModel: SettingsViewModel
-    private lateinit var mSettingsBinding: FragmentSettingsBinding
+    private lateinit var mSettingsBinding: FragmentProfileBinding
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         mSettingsBinding =
-            DataBindingUtil.inflate(inflater, R.layout.fragment_settings, container, false)
-        mSettingsViewModel = ViewModelProviders.of(this).get(SettingsViewModel::class.java)
+            DataBindingUtil.inflate(inflater, R.layout.fragment_profile, container, false)
+        mSettingsViewModel = ViewModelProvider(this).get(SettingsViewModel::class.java)
         mSettingsBinding.settingsViewModel = mSettingsViewModel
 
-        mSettingsViewModel.text.observe(viewLifecycleOwner, Observer {
+        mSettingsViewModel.text.observe(viewLifecycleOwner, {
             mSettingsBinding.textTools.text = it
         })
         return mSettingsBinding.root

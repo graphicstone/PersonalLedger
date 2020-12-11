@@ -2,7 +2,7 @@ package com.nullbyte.personalledger.viewModel
 
 import android.app.Application
 import androidx.lifecycle.MutableLiveData
-import com.nullbyte.medicineledger.listener.ResultListener
+import com.nullbyte.personalledger.listener.ResultListener
 import com.nullbyte.personalledger.base.BaseViewModel
 import com.nullbyte.personalledger.model.UserDetailsModel
 import com.nullbyte.personalledger.repository.UserDetailRepository

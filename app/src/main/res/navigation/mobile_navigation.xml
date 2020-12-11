@@ -3,30 +3,30 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/nav_home">
+    app:startDestination="@+id/navigation_dashboard">
 
     <fragment
-        android:id="@+id/nav_home"
-        android:name="com.nullbyte.personalledger.view.fragments.HomeFragment"
-        android:label="@string/menu_home"
-        tools:layout="@layout/fragment_home" />
+        android:id="@+id/navigation_dashboard"
+        android:name="com.nullbyte.personalledger.view.fragments.DashboardFragment"
+        android:label="@string/title_dashboard"
+        tools:layout="@layout/fragment_dashboard" />
 
     <fragment
-        android:id="@+id/nav_gallery"
+        android:id="@+id/navigation_statistics"
+        android:name="com.nullbyte.personalledger.view.fragments.StatisticsFragment"
+        android:label="@string/title_statistics"
+        tools:layout="@layout/fragment_statistics" />
+
+    <fragment
+        android:id="@+id/navigation_history"
         android:name="com.nullbyte.personalledger.view.fragments.ExpenseHistoryFragment"
-        android:label="@string/menu_expense_history"
+        android:label="@string/title_history"
         tools:layout="@layout/fragment_expense_history" />
 
     <fragment
-        android:id="@+id/nav_slideshow"
-        android:name="com.nullbyte.personalledger.view.fragments.AboutFragment"
-        android:label="@string/menu_about"
-        tools:layout="@layout/fragment_about" />
-
-    <fragment
-        android:id="@+id/nav_tools"
-        android:name="com.nullbyte.personalledger.view.fragments.SettingsFragment"
-        android:label="@string/menu_settings"
-        tools:layout="@layout/fragment_settings" />
+        android:id="@+id/navigation_profile"
+        android:name="com.nullbyte.personalledger.view.fragments.ProfileFragment"
+        android:label="@string/title_profile"
+        tools:layout="@layout/fragment_profile" />
 
 </navigation>

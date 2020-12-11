@@ -1,4 +1,4 @@
-package com.nullbyte.medicineledger.listener
+package com.nullbyte.personalledger.listener
 
 interface ResultListener {
     fun onSuccess(`object`: Any?)
