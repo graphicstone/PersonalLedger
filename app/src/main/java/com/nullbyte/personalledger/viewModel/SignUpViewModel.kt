@@ -3,7 +3,7 @@ package com.nullbyte.personalledger.viewModel
 import android.app.Application
 import androidx.lifecycle.MutableLiveData
 import com.google.firebase.auth.FirebaseUser
-import com.nullbyte.medicineledger.listener.ResultListener
+import com.nullbyte.personalledger.listener.ResultListener
 import com.nullbyte.personalledger.base.BaseViewModel
 import com.nullbyte.personalledger.repository.AuthRepository
 

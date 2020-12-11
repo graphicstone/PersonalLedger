@@ -37,10 +37,10 @@ class LoginActivity : BaseActivity() {
     }
 
     private fun observeData() {
-        viewModel.signInResponse.observe(this, Observer { result ->
+        viewModel.signInResponse.observe(this, { result ->
             updateUI(result)
         })
-        viewModel.signInError.observe(this, Observer {
+        viewModel.signInError.observe(this, {
             if (it != null) {
                 VariableAndMethodUtility.showToast(this, it)
             }
@@ -83,7 +83,7 @@ class LoginActivity : BaseActivity() {
 
     private fun updateUI(user: FirebaseUser?) {
         if (user != null) {
-            val intent = Intent(this, MainActivity::class.java)
+            val intent = Intent(this, MainActivity2::class.java)
             startActivity(intent)
         }
     }

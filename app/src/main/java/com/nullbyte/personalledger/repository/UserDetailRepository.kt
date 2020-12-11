@@ -3,7 +3,7 @@ package com.nullbyte.personalledger.repository
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.ktx.Firebase
-import com.nullbyte.medicineledger.listener.ResultListener
+import com.nullbyte.personalledger.listener.ResultListener
 import com.nullbyte.personalledger.model.UserDetailsModel
 import com.nullbyte.personalledger.utilities.Constant
 
