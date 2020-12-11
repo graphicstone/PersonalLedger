@@ -8,14 +8,13 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.nullbyte.personalledger.R
+import com.nullbyte.personalledger.base.BaseActivity
 
-class MainActivity2 : AppCompatActivity() {
+class LandingActivity : BaseActivity() {
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main2)
+    override fun onActivityCreate(savedInstanceState: Bundle?) {
+        setContentView(R.layout.activity_landing)
         val navView: BottomNavigationView = findViewById(R.id.nav_view)
-        supportActionBar?.hide()
 
         val navController = findNavController(R.id.nav_host_fragment)
         // Passing each menu ID as a set of Ids because each
@@ -30,5 +29,20 @@ class MainActivity2 : AppCompatActivity() {
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
+    }
+
+    override fun onActivityStart() {
+    }
+
+    override fun onActivityResume() {
+    }
+
+    override fun onActivityStop() {
+    }
+
+    override fun onActivityPause() {
+    }
+
+    override fun onActivityDestroy() {
     }
 }

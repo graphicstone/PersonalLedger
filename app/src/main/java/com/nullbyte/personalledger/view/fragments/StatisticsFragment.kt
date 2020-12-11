@@ -6,27 +6,26 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProviders
+import androidx.lifecycle.ViewModelProvider
 import com.nullbyte.personalledger.R
-import com.nullbyte.personalledger.databinding.FragmentAboutBinding
+import com.nullbyte.personalledger.databinding.FragmentStatisticsBinding
 import com.nullbyte.personalledger.viewModel.AboutViewModel
 
-class AboutFragment : Fragment() {
+class StatisticsFragment : Fragment() {
 
     private lateinit var mAboutViewModel: AboutViewModel
-    private lateinit var mAboutBinding: FragmentAboutBinding
+    private lateinit var mAboutBinding: FragmentStatisticsBinding
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        mAboutBinding = DataBindingUtil.inflate(inflater, R.layout.fragment_about, container, false)
-        mAboutViewModel = ViewModelProviders.of(this).get(AboutViewModel::class.java)
+    ): View {
+        mAboutBinding = DataBindingUtil.inflate(inflater, R.layout.fragment_statistics, container, false)
+        mAboutViewModel = ViewModelProvider(this).get(AboutViewModel::class.java)
         mAboutBinding.aboutViewModel = mAboutViewModel
 
-        mAboutViewModel.text.observe(viewLifecycleOwner, Observer {
+        mAboutViewModel.text.observe(viewLifecycleOwner, {
             mAboutBinding.textSlideshow.text = it
         })
 

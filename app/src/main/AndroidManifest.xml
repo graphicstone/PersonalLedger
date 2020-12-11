@@ -14,12 +14,11 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".view.activities.MainActivity2"
+            android:name=".view.activities.LandingActivity"
             android:label="@string/title_activity_main2" />
         <activity android:name=".view.activities.OnBoardingActivity" />
         <activity android:name=".view.activities.ProfileActivity" />
         <activity android:name=".view.activities.SignUpActivity" />
-        <activity android:name=".view.activities.MainActivity" />
         <activity android:name=".view.activities.SplashActivity" />
         <activity
             android:name=".view.activities.LoginActivity"

@@ -9,24 +9,21 @@ import android.view.ViewGroup
 import android.widget.DatePicker
 import android.widget.TimePicker
 import androidx.databinding.DataBindingUtil
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import com.google.firebase.database.DatabaseReference
-import com.google.firebase.database.FirebaseDatabase
 import com.nullbyte.personalledger.R
 import com.nullbyte.personalledger.base.BaseFragment
-import com.nullbyte.personalledger.databinding.FragmentHomeBinding
+import com.nullbyte.personalledger.databinding.FragmentDashboardBinding
 import com.nullbyte.personalledger.model.ExpanseModel
 import com.nullbyte.personalledger.utilities.Constant
 import com.nullbyte.personalledger.utilities.VariableAndMethodUtility
 import com.nullbyte.personalledger.viewModel.HomeViewModel
 import java.util.*
 
-class HomeFragment : BaseFragment(), DatePickerDialog.OnDateSetListener,
+class DashboardFragment : BaseFragment(), DatePickerDialog.OnDateSetListener,
     TimePickerDialog.OnTimeSetListener {
 
     private lateinit var mHomeViewModel: HomeViewModel
-    private lateinit var mHomeBinding: FragmentHomeBinding
+    private lateinit var mHomeBinding: FragmentDashboardBinding
     var day = 0
     var month: Int = 0
     var year: Int = 0
@@ -41,7 +38,7 @@ class HomeFragment : BaseFragment(), DatePickerDialog.OnDateSetListener,
     override fun getRootView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View {
-        mHomeBinding = DataBindingUtil.inflate(inflater, R.layout.fragment_home, container, false)
+        mHomeBinding = DataBindingUtil.inflate(inflater, R.layout.fragment_dashboard, container, false)
         return mHomeBinding.root
     }
 
@@ -73,13 +70,13 @@ class HomeFragment : BaseFragment(), DatePickerDialog.OnDateSetListener,
             month = calendar.get(Calendar.MONTH)
             year = calendar.get(Calendar.YEAR)
             val datePickerDialog =
-                DatePickerDialog(requireContext(), this@HomeFragment, year, month, day)
+                DatePickerDialog(requireContext(), this@DashboardFragment, year, month, day)
             datePickerDialog.show()
         }
     }
 
     private fun observeData() {
-        mHomeViewModel.result.observe(viewLifecycleOwner, Observer {
+        mHomeViewModel.result.observe(viewLifecycleOwner, {
             if (it) {
                 VariableAndMethodUtility.showToast(
                     requireContext(),
@@ -114,7 +111,7 @@ class HomeFragment : BaseFragment(), DatePickerDialog.OnDateSetListener,
         hour = calendar.get(Calendar.HOUR)
         minute = calendar.get(Calendar.MINUTE)
         val timePickerDialog =
-            TimePickerDialog(requireContext(), this@HomeFragment, hour, minute, false)
+            TimePickerDialog(requireContext(), this@DashboardFragment, hour, minute, false)
         timePickerDialog.show()
     }
 
